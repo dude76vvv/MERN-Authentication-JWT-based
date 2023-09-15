@@ -1,0 +1,114 @@
+$primary: #00a796;
+$white: #fff;
+$invalid: #FF0000;
+
+
+
+.middle{
+
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 100%;
+}
+
+
+
+.auth {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &__box {
+
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 7px 1px 16px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 7px 1px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 1px 16px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &__header {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+
+
+    .errorMsg{
+      background-color: lightpink;
+      color: firebrick;
+      font-weight: bold;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      }
+  
+
+
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 1.25rem;
+
+    }
+
+    margin-bottom: 20px;
+
+
+    .input-error {
+      border-color: $invalid;
+    }
+
+    .errorYup {
+      color: $invalid;
+      font-size: 1rem;
+      text-align: left;
+      margin-top: 0.25rem;
+    }
+
+  }
+
+
+&__footer {
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: $primary;
+    color: $white
+  }
+
+  button:disabled {
+    opacity: 0.1;
+  }
+
+  a {
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+}

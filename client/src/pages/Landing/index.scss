@@ -1,0 +1,25 @@
+.jokeContainer{
+
+max-width:1120px;
+margin-right: auto;
+margin-left: auto;
+padding: 0 15px;
+
+    button{
+        padding: 5px;
+    }
+
+    .header{
+        display: flex;
+        margin: 20px 0;
+        gap:10px;
+
+    }
+
+    .cardSection{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+}

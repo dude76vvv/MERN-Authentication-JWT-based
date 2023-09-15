@@ -1,0 +1,25 @@
+.card{
+    width: 30%;
+    text-transform: capitalize;
+    border: 5px solid red;
+    text-align: center;
+    height: 350px;
+    padding: 5px;
+
+    .ask{
+        margin: 20px 0;
+        height: 80px;
+    }
+
+    button{
+        padding:5px;
+    }
+
+    .spoiler{
+
+        margin: 20px 0;
+        padding: 0 10px;
+
+    }
+
+}
