@@ -14,7 +14,7 @@ module.exports = (userId) => {
       if (error) {
         console.log(error);
         res.json({
-          status: "unsucess",
+          status: "unsuccess",
           error: "error while hashing token",
         });
 
@@ -41,7 +41,7 @@ module.exports = (userId) => {
           .catch((err) => {
             console.log(err);
             res.json({
-              status: "unsucess",
+              status: "unsuccess",
               error: "error while saving token",
             });
           });

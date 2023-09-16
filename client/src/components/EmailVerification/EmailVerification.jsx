@@ -8,34 +8,36 @@ const EmailVerification = () => {
   const [validUrl, setValidUrl] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const param = useParams();
-
-  //   check with backend if link is correect
+  //   check with backend if link is correct
   useEffect(() => {
     const verifyEmail = async () => {
-      try {
-        const response = await axios.get(
-          `/users/${param.id}/verify/${param.token}`
-        );
+      if (!validUrl) {
+        try {
+          const response = await axios.get(
+            `/users/${param.id}/verify/${param.token}`
+          );
 
-        if (response.status === 201) {
-          setValidUrl(true);
-        }
+          if (response.status === 201) {
+            setValidUrl(true);
+            setErrMsg("");
+          }
 
-        //error code such as 500,400 will be in catch blokc
-      } catch (error) {
-        console.log(`error is ${error}`);
-        setValidUrl(false);
+          //error code such as 500,400 will be in catch block
+        } catch (error) {
+          console.log(`error is ${error}`);
+          setValidUrl(false);
 
-        if (!error?.response) {
-          setErrMsg("No Server Response");
-        } else {
-          setErrMsg(error.response.data?.error);
+          if (!error?.response) {
+            setErrMsg("No Server Response");
+          } else {
+            setErrMsg(error.response.data?.error);
+          }
         }
       }
     };
 
     verifyEmail();
-  }, [param]);
+  }, [param.id, param.token, validUrl]);
 
   return (
     <div className="successFail">

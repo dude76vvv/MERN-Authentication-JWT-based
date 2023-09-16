@@ -23,7 +23,7 @@ const verifyUser = async (req, res) => {
     if (currUser.isVerified) {
       return res.status(400).json({
         status: "unsuccess",
-        error: "User already verfied.please login to continue",
+        error: "User already verified.please login to continue",
       });
     }
 
@@ -65,7 +65,7 @@ const verifyUser = async (req, res) => {
 
     res.status(201).json({
       status: "success",
-      msg: "user succesful created",
+      msg: "user successful created",
     });
   } catch (error) {
     console.log(error);

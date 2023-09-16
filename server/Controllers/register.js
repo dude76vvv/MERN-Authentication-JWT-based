@@ -37,10 +37,10 @@ const registerUser = async (req, res) => {
     }
 
     //created url link to frontend for email verification
-    //frontend useffect will call backend to verifiy
+    //frontend useeffect will call backend to verify
     const URL = `${process.env.CLIENT_BASE_URL}/user/${newUser._id}/verify/${tokenString}`;
 
-    //nodeemailer
+    //nodemailer
     await sendVerificationEmail(newUser.email, "VERIFY EMAIL", URL, "email");
     console.log("email sent");
 
